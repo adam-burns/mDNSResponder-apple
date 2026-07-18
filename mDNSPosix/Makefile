@@ -53,7 +53,7 @@ else ifeq ($(SYSTEM), Linux)
   os=linux
 endif
 
-CC = cc
+CC = gcc
 BISON = bison
 FLEX = flex
 ST = strip
@@ -62,7 +62,7 @@ SOOPTS = -shared
 CP = cp
 RM = rm
 LN = ln -s -f
-CFLAGS_COMMON = -I$(COREDIR) -I$(SHAREDDIR) -I$(UTILDIR) -I$(DSODIR) -I$(SERVICEREGISTRATIONDIR) -I$(OBJDIR) -fwrapv -W -Wall -DPOSIX_BUILD -DPID_FILE=\"/var/run/mdnsd.pid\" -DMDNS_UDS_SERVERPATH=\"/var/run/mdnsd\" -DMDNS_NO_STRICT=1
+CFLAGS_COMMON = -I$(COREDIR) -I$(SHAREDDIR) -I$(UTILDIR) -I$(DSODIR) -I$(SERVICEREGISTRATIONDIR) -I$(OBJDIR) -fwrapv -W -Wall -DPOSIX_BUILD -DPID_FILE=\"/var/run/mdnsd.pid\" -DMDNS_UDS_SERVERPATH=\"/var/run/mdnsd\" -DMDNS_NO_STRICT=1 -std=gnu17
 CFLAGS_PTHREAD =
 LINKOPTS =
 LINKOPTS_PTHREAD = -lpthread
